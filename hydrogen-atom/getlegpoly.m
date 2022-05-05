@@ -1,4 +1,4 @@
-function [lege_poly, a_lege_poly] = getlegpoly(m, l)
+function legpoly = getlegpoly(m, l)
 	% Gets the legendre polynomial for our given quantum number
 	% m and l (magnetic and angular quantum)
 	%
@@ -6,10 +6,14 @@ function [lege_poly, a_lege_poly] = getlegpoly(m, l)
 
 	syms x;	 	% set up symbolic variable x
 	rodrigues = (x^2 - 1)^l; 	% set up differentiated part of rodrigues formula 
+	
+	if (l+m == 0)
+		differ = rodrigues;
+	else
+		differ = diff(rodrigues,l+m); % see rodrigues formula on wikipedia
+	end
 
-	differ = diff(rodrigues,l+m); % see rodrigues formula on wikipedia
-
-	a_lege_poly = (((-1)^m)/(2^l factorial(l)))*((1-x^2)^(m/2))*differ;
-
-	lege_poly = matlabFunction(final_symbolic);
+	a_legpoly = (((-1)^m)/(2^l*factorial(l)))*((1-x^2)^(m/2))*differ;
+    
+	legpoly = matlabFunction(a_legpoly);
 end
