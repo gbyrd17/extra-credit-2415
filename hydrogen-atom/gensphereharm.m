@@ -1,7 +1,7 @@
 function Y = gensphereharm(theta, phi, m, l)
     %{
-        This does our final calculation, and generates the spherical harmonic values 
-        for our input variables.
+        This does our final calculation, and generates the spherical
+        harmonic values for our input variables.
             
         m can be = -l to l, so we have a few cases which are    
         covered in the below linked part of the wikipedia article:

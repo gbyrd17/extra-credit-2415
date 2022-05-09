@@ -23,7 +23,7 @@ phi = atan2(y, x);
 % init vars
 n = 4;
 l = 3;
-m = 3;
+m = 0;
 
 % we make the harmonic part
 Y = gensphereharm(theta,phi,m,l);
@@ -40,6 +40,7 @@ psi = R .* Y;
 % psi is a wavefunction, so we need to plot the probability, not just the
 % psi
 figure()
-isosurface(psi.^2,1e-5,sign(psi)) % isovalue set to 1e-5, just works the best, and i dont get any improvement by lowering it.
+isosurface(psi.^2,1e-5,sign(psi))   % isovalue set to 1e-5, just works the best,
+                                    % and i dont get any improvement by lowering it.
 axis equal % ensures axis have same unit length
 axis vis3d % freezes aspect ratio, allows the plot to look like the actual orbitals
