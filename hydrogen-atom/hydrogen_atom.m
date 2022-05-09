@@ -23,7 +23,7 @@ phi = atan2(y, x);
 % init vars
 n = 4;
 l = 3;
-m = 0;
+m = 3;
 
 % we make the harmonic part
 Y = gensphereharm(theta,phi,m,l);
