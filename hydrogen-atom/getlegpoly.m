@@ -1,8 +1,10 @@
 function legpoly = getlegpoly(m, l)
-	% Gets the legendre polynomial for our given quantum number
-	% m and l (magnetic and angular quantum)
-	%
-	% https://en.wikipedia.org/wiki/Associated_Legendre_polynomials
+	%{ 
+        Gets the legendre polynomial at our given quantum numbers
+        m and l (magnetic and angular momentum)
+	
+        https://en.wikipedia.org/wiki/Associated_Legendre_polynomials
+	%} 
 
 	syms x;	 	% set up symbolic variable x
 	rodrigues = (x^2 - 1)^l; 	% set up differentiated part of rodrigues formula 

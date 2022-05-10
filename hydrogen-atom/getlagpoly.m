@@ -1,5 +1,10 @@
 function lagpoly = getlagpoly(n,l) 
-    % This function will get the laguerre polynomial for a given n and l
+    %{
+        Gets the Laguerre Polynomial at our given quantum numbers
+        n and l (principal and angular momentum)
+
+        https://en.wikipedia.org/wiki/Laguerre_polynomials#Generalized_Laguerre_polynomials
+    %}
 
     alpha = 2*l + 1;    % setting up the alpha and n that the wikipedia page uses to calculate
     nn = n - l - 1;      % the legendre polynomial at the right degree

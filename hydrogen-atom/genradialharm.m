@@ -1,6 +1,12 @@
 function R = genradialharm(r,n,l)
-    % We now generate the Radial Harmonic
+    %{
+        We now generate the Radial Harmonic R for the given quantum numbers
+        n and l.
 
+        We also have a consideration for the Laguerre Polynomial: if
+        n-l-1 = 0, then L = 1.  We can incorporate this into our code as a case 
+        and speed up computation time for certain situations.
+    %}
     % We have a universal constant for an atom of constant mass,
     % so we set it equal to 1 
     a = 1;
